@@ -1,7 +1,10 @@
 #!/bin/bash 
 
+# Directory where the script lives
+DIR_NAME=$(dirname $(readlink -f $0))
+
 SOURCE_DIR=home
-pushd $SOURCE_DIR
+pushd $DIR_NAME/$SOURCE_DIR
 
 # Create any directory that doesn't exist first.
 for directory in `find . -type d`; do mkdir -pv $HOME/$directory ; done
