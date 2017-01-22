@@ -1,0 +1,11 @@
+
+# Disables the capslock key, and maps it to a control key. 
+setxkbmap -option ''
+xmodmap -e 'clear Lock'
+xmodmap -e 'keycode 66 = Control_L'
+xmodmap -e 'add Control = Control_L'
+
+# Causes the Newly created Control key to fire an Escape keypress if no other 
+# key is pressed with it.
+xcape -e 'Control_L=Escape'
+
