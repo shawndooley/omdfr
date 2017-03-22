@@ -20,6 +20,19 @@ Plug 'vim-scripts/a.vim'
 " Generate template code when opening new files based on their extension
 Plug 'aperezdc/vim-template'
 
+" Use cpp-lint inside vim
+Plug 'funorpain/vim-cpplint'
+
+" Mostly installed for Python lint
+Plug 'vim-syntastic/syntastic'
+
+"Shows a column to the left of each buffer to show git changes
+Plug 'airblade/vim-gitgutter'
+
+" Helps me stay organized
+Plug 'vimwiki/vimwiki'
+
+
 call plug#end() 
 
 "Configure Plugins
@@ -150,3 +163,23 @@ let g:username= "Shawn Dooley"
 
 
 
+
+
+" Syntastic config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_pylint_exe = 'pylint3'
+
+
+
+" Cpplint config
+" let s:cpplint_cmd="cpplint"
