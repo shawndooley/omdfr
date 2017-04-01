@@ -56,11 +56,11 @@ load {
 }
 
 disk "/" {
-        format = "[/] %free (%avail)/%total"
+        format = "[/] %avail"
 }
 
 disk "/home/" {
-        format = "[/home/] %free (%avail)/%total"
+        format = "[/home] %avail"
 }
 
 volume master {

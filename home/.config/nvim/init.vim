@@ -10,7 +10,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged') 
 
-# Async linter
+" Async linter
 Plug 'w0rp/ale'
 
 
