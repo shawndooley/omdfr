@@ -183,3 +183,6 @@ let g:syntastic_python_pylint_exe = 'pylint3'
 
 " Cpplint config
 " let s:cpplint_cmd="cpplint"
+
+
+set statusline+=%F

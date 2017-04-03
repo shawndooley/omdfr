@@ -150,3 +150,5 @@ if [ -f ~/.private_bashrc ]; then
 fi
 
 
+export PATH=/home/ams/src/ams-core/core/bin/:$PATH
+
