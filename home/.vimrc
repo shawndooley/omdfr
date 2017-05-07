@@ -32,6 +32,8 @@ Plug 'airblade/vim-gitgutter'
 " Helps me stay organized
 Plug 'vimwiki/vimwiki'
 
+" Hilights current word
+Plug 'dominikduda/vim_current_word'
 
 call plug#end() 
 
@@ -119,9 +121,9 @@ set relativenumber
 set smartcase
 
 set lazyredraw
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set expandtab
 set textwidth=80
 set cindent
@@ -152,16 +154,10 @@ map <F2> :tabnext <cr>
 map <F3> :tabprev <cr>
 map <F9> :buffers <cr>
 
-
-
-
 " Template stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:email = "shawn@shawndooley.net"
 let g:username= "Shawn Dooley"
-
-
-
 
 
 
@@ -171,18 +167,17 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_pylint_exe = 'pylint3'
+let g:syntastic_python_pylint_exe = 'pylint'
 
 
 
 " Cpplint config
 " let s:cpplint_cmd="cpplint"
-
 
 set statusline+=%F

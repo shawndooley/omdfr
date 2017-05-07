@@ -44,7 +44,7 @@ run_watch DHCP {
 }
 
 run_watch OpenVPN {
-        pidfile = "/var/run/openvpn/client1.pid"
+        pidfile = "/var/run/openvpn/*.pid"
 }
 
 tztime local {

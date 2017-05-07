@@ -149,6 +149,7 @@ if [ -f ~/.private_bashrc ]; then
     . ~/.private_bashrc
 fi
 
+export GOBY_HDF5_PLUGIN="/home/ams/src/ams-core/core/lib/libams_hdf5plugin.so"
 
-export PATH=/home/ams/src/ams-core/core/bin/:$PATH
 
+export PATH="~/src/ams-core/core/bin/:$PATH"
