@@ -125,7 +125,7 @@ shopt -s checkwinsize
 export EDITOR=/usr/bin/vim
 set -o vi
 
-export MAKEFLAGS="-j4"
+export MAKEFLAGS="-j8"
 
 
 
@@ -152,3 +152,5 @@ fi
 
 export PATH=/home/ams/src/ams-core/core/bin/:$PATH
 
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/arcgis/runtime_sdk/qt10.2.6/sdk/linux/x64/lib
+export LD_LIBRARY_PATH

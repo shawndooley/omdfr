@@ -33,6 +33,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vimwiki/vimwiki'
 
 
+" Templates
+Plug 'LucHermitte/mu-template'
+
+
+" Highlights current word
+Plug 'dominikduda/vim_current_word'
+
 call plug#end() 
 
 "Configure Plugins
