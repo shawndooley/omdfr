@@ -190,7 +190,7 @@ bar {
 #output HDMI-0
         position top
         status_command i3status
-        tray_output DP2-1
+#        tray_output DP2-1
 }
 
 # Startup applications
@@ -201,6 +201,7 @@ exec feh --bg-center ~/Pictures/Firefox_wallpaper.png
 exec pasystray
 exec nm-applet
 exec blueman-applet
+exec dropbox start
 
 
 
