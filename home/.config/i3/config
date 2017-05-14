@@ -204,6 +204,8 @@ exec blueman-applet
 exec dropbox start
 
 
+exec syndaemon -i 0.5 -d -K -t
+
 
 
 # timed screen lock
