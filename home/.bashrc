@@ -149,8 +149,9 @@ if [ -f ~/.private_bashrc ]; then
     . ~/.private_bashrc
 fi
 
+export GOBY_HDF5_PLUGIN="/home/ams/src/ams-core/core/lib/libams_hdf5plugin.so"
 
-export PATH=/home/ams/src/ams-core/core/bin/:$PATH
+export PATH="~/src/ams-core/core/bin/:$PATH"
 
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/arcgis/runtime_sdk/qt10.2.6/sdk/linux/x64/lib
 export LD_LIBRARY_PATH
