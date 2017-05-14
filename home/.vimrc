@@ -35,6 +35,16 @@ Plug 'vimwiki/vimwiki'
 " Hilights current word
 Plug 'dominikduda/vim_current_word'
 
+" Automattically add matching closing character for braces, brackets, or
+" parenthesis.
+Plug 'Raimondi/delimitMate'
+
+"" Csv formatting
+Plug 'chrisbra/csv.vim'
+
+"Allows me to switch between .cc and .h files with the 'A' command
+Plug 'vim-scripts/a.vim'
+
 call plug#end() 
 
 "Configure Plugins
@@ -117,7 +127,9 @@ set grepprg=grep\ -nH\ $*
 set hlsearch
 
 set autoindent smartindent
+set number
 set relativenumber
+set ignorecase
 set smartcase
 
 set lazyredraw
