@@ -45,6 +45,13 @@ Plug 'chrisbra/csv.vim'
 "Allows me to switch between .cc and .h files with the 'A' command
 Plug 'vim-scripts/a.vim'
 
+" Templates
+Plug 'LucHermitte/mu-template'
+
+
+" Highlights current word
+Plug 'dominikduda/vim_current_word'
+
 call plug#end() 
 
 "Configure Plugins
