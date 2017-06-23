@@ -18,7 +18,7 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
 Plug 'vim-scripts/a.vim'
 
 " Generate template code when opening new files based on their extension
-Plug 'aperezdc/vim-template'
+"Plug 'aperezdc/vim-template'
 
 " Use cpp-lint inside vim
 Plug 'funorpain/vim-cpplint'
@@ -46,11 +46,21 @@ Plug 'chrisbra/csv.vim'
 Plug 'vim-scripts/a.vim'
 
 " Templates
-Plug 'LucHermitte/mu-template'
+"Plug 'LucHermitte/mu-template'
 
 
 " Highlights current word
 Plug 'dominikduda/vim_current_word'
+
+" Who would have thought I would be working with handlebars?
+Plug 'mustache/vim-mustache-handlebars'
+
+" Javascript
+Plug 'jelera/vim-javascript-syntax'
+Plug 'hallettj/jslint.vim'
+
+
+
 
 call plug#end() 
 

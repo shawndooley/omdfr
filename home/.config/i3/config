@@ -189,14 +189,14 @@ bindsym $mod+r mode "resize"
 bar {
 #output HDMI-0
         position top
-        status_command i3status
+        status_command i3blocks
 #        tray_output DP2-1
 }
 
 # Startup applications
 #exec gnome-sound-applet
 exec ~/bin/fuck_capslock
-exec feh --bg-center ~/Pictures/Firefox_wallpaper.png
+#exec feh --bg-center ~/Pictures/Firefox_wallpaper.png
 
 exec pasystray
 exec nm-applet
@@ -209,7 +209,7 @@ exec syndaemon -i 0.5 -d -K -t
 
 
 # timed screen lock
-#exec xautolock -time 1 -locker i3lock
+exec xautolock -time 1 -locker ~/bin/fuzz.sh
 
 # These didn't work. I should look further into that when I get time. 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -217,4 +217,4 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Screenlock
-bindsym Control+Mod1+L exec i3lock
+bindsym Control+Mod1+L exec ~/bin/fuzz.sh
