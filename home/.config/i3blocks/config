@@ -86,7 +86,7 @@ separator=true
 instance=tun1
 color=#00FF00
 interval=10
-separator=false
+separator=true
 
 [iface]
 label=Wifi:
@@ -98,7 +98,7 @@ separator=false
 [wifi]
 instance=wlp4s0
 interval=10
-separator=false
+separator=true
 
 # CPU usage
 #
@@ -114,12 +114,16 @@ separator=false
 #interval=10
 
 # Battery indicator
-#
 # The battery instance defaults to 0.
+
 [battery]
-label=BAT
-#label=⚡
-#instance=1
+label=Bat 1
+instance=0
+interval=30
+
+[battery]
+label=Bat 2
+instance=1
 interval=30
 
 # Date Time

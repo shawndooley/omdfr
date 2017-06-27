@@ -56,8 +56,14 @@ Plug 'dominikduda/vim_current_word'
 Plug 'mustache/vim-mustache-handlebars'
 
 " Javascript
-Plug 'jelera/vim-javascript-syntax'
-Plug 'hallettj/jslint.vim'
+"This worked, but I wanted to try a different one
+"Plug 'jelera/vim-javascript-syntax'
+
+Plug 'wookiehangover/jshint.vim'
+
+"Plug 'pangloss/vim-javascript'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'othree/yajs.vim', {'for':'javascript'}
 
 
 
@@ -150,9 +156,9 @@ set ignorecase
 set smartcase
 
 set lazyredraw
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set textwidth=80
 set cindent

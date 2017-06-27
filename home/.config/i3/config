@@ -212,7 +212,7 @@ exec syndaemon -i 0.5 -d -K -t
 
 
 # timed screen lock
-exec xautolock -time 1 -locker ~/bin/fuzz.sh
+exec xautolock -time 5 -locker ~/bin/fuzz.sh
 
 # These didn't work. I should look further into that when I get time. 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
