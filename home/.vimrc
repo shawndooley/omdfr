@@ -42,6 +42,9 @@ Plug 'Raimondi/delimitMate'
 "" Csv formatting
 Plug 'chrisbra/csv.vim'
 
+"Allows me to switch between .cc and .h files with the 'A' command
+Plug 'vim-scripts/a.vim'
+
 " Templates
 "Plug 'LucHermitte/mu-template'
 
@@ -54,9 +57,9 @@ Plug 'mustache/vim-mustache-handlebars'
 
 " Javascript
 "This worked, but I wanted to try a different one
-Plug 'jelera/vim-javascript-syntax'
+"Plug 'jelera/vim-javascript-syntax'
 
-"Plug 'wookiehangover/jshint.vim'
+Plug 'wookiehangover/jshint.vim'
 
 "Plug 'pangloss/vim-javascript'
 "Plug 'sheerun/vim-polyglot'
@@ -67,6 +70,7 @@ Plug 'scrooloose/nerdcommenter'
 
 
 call plug#end() 
+
 "Configure Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -215,5 +219,18 @@ let g:syntastic_python_pylint_exe = 'pylint'
 set statusline+=%F
 
 
+" Set default directory for wiki
+let wiki = {}
+let wiki.path = '$HOME/SynologyDrive/wiki'
+let wiki.path_html = '$HOME/SynologyDrive/wiki_html'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vim': 'vim'}
+"let wiki.template_path = '$HOME/SynologyDrive/wiki_templates'
+"let wiki.template_default = 'default_template'
+"let wiki.template_ext = '.html'
 
+
+let g:vimwiki_list = [wiki]
+
+
+autocmd BufWritePost,FileWritePost *.wiki VimwikiAll2HTML
 
