@@ -216,3 +216,20 @@ let g:syntastic_python_pylint_exe = 'pylint'
 " let s:cpplint_cmd="cpplint"
 
 set statusline+=%F
+
+
+" Set default directory for wiki
+let wiki = {}
+let wiki.path = '$HOME/SynologyDrive/wiki'
+let wiki.path_html = '$HOME/SynologyDrive/wiki_html'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vim': 'vim'}
+"let wiki.template_path = '$HOME/SynologyDrive/wiki_templates'
+"let wiki.template_default = 'default_template'
+"let wiki.template_ext = '.html'
+
+
+let g:vimwiki_list = [wiki]
+
+
+autocmd BufWritePost,FileWritePost *.wiki VimwikiAll2HTML
+
