@@ -21,7 +21,7 @@ Plug 'vim-scripts/a.vim'
 "Plug 'aperezdc/vim-template'
 
 " Use cpp-lint inside vim
-Plug 'funorpain/vim-cpplint'
+"Plug 'funorpain/vim-cpplint'
 
 " Mostly installed for Python lint
 Plug 'vim-syntastic/syntastic'
@@ -42,9 +42,6 @@ Plug 'Raimondi/delimitMate'
 "" Csv formatting
 Plug 'chrisbra/csv.vim'
 
-"Allows me to switch between .cc and .h files with the 'A' command
-Plug 'vim-scripts/a.vim'
-
 " Templates
 "Plug 'LucHermitte/mu-template'
 
@@ -57,19 +54,19 @@ Plug 'mustache/vim-mustache-handlebars'
 
 " Javascript
 "This worked, but I wanted to try a different one
-"Plug 'jelera/vim-javascript-syntax'
+Plug 'jelera/vim-javascript-syntax'
 
-Plug 'wookiehangover/jshint.vim'
+"Plug 'wookiehangover/jshint.vim'
 
 "Plug 'pangloss/vim-javascript'
 "Plug 'sheerun/vim-polyglot'
 "Plug 'othree/yajs.vim', {'for':'javascript'}
 
 
+Plug 'scrooloose/nerdcommenter'
 
 
 call plug#end() 
-
 "Configure Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -216,3 +213,7 @@ let g:syntastic_python_pylint_exe = 'pylint'
 " let s:cpplint_cmd="cpplint"
 
 set statusline+=%F
+
+
+
+
