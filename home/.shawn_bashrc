@@ -1,0 +1,4 @@
+export PATH=$PATH:/home/shawn/src/moos-ivp/bin
+
+alias asdf='cd ~/src/moos-ivp/ivp/missions'
+alias qwer='cd ~/mit/2680/labs/missions'
