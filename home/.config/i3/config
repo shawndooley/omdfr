@@ -8,7 +8,20 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec ~/.screenlayout/desk.sh
+#
+
+exec --no-startup-id dbus-send \
+       --session \
+       --print-reply=literal \
+       --dest=org.gnome.SessionManager \
+       "/org/gnome/SessionManager" \
+       org.gnome.SessionManager.RegisterClient \
+       "string:i3" \
+       "string:$DESKTOP_AUTOSTART_ID"
+
+
+
+#exec ~/.screenlayout/desk.sh
 
 set $mod Mod4
 
@@ -157,7 +170,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "gnome-session-quit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -205,15 +218,14 @@ exec ~/bin/fuck_capslock
 exec pasystray
 exec nm-applet
 exec blueman-applet
-exec dropbox start
-
+# exec dropbox start
 
 exec syndaemon -i 0.5 -d -K -t
 
-
-
 # timed screen lock
-exec xautolock -time 5 -locker ~/bin/fuzz.sh
+# exec xautolock -time 5 -locker ~/bin/fuzz.sh
+exec xautolock -time 3 -locker gnome-screensaver-command --lock
+
 
 # These didn't work. I should look further into that when I get time. 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -221,4 +233,5 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 
 # Screenlock
-bindsym Control+Mod1+L exec ~/bin/fuzz.sh
+bindsym Control+Mod1+L exec gnome-screensaver-command --lock
+

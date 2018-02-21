@@ -10,6 +10,11 @@ endif
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged') 
+" Can I just do this :?
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+
+" Trying this out
+"Plug 'jeaye/color_coded', {'do': 'mkdir build && cd build && cmake .. && make && make install'}
 
 "C++ Autocomplete
 Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
@@ -59,7 +64,7 @@ Plug 'mustache/vim-mustache-handlebars'
 "This worked, but I wanted to try a different one
 "Plug 'jelera/vim-javascript-syntax'
 
-Plug 'wookiehangover/jshint.vim'
+"Plug 'wookiehangover/jshint.vim'
 
 "Plug 'pangloss/vim-javascript'
 "Plug 'sheerun/vim-polyglot'
@@ -68,6 +73,10 @@ Plug 'wookiehangover/jshint.vim'
 
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'vim-scripts/TaskList.vim'
+
+" Trying this.
+Plug 'kien/ctrlp.vim'
 
 call plug#end() 
 
@@ -183,7 +192,7 @@ command! Wq wq
 command! W w
 command! Q q
 
-" Remap jj to escape in insertg mode. 
+" Remap jj to escape in insert mode. 
 inoremap jj <Esc>
 
 map <F2> :tabnext <cr>
@@ -211,6 +220,10 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_pylint_exe = 'pylint'
 
+" color_coded
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:color_coded_enabled = 1
+let g:color_coded_filetypes = ['c', 'cpp', 'objc']
 
 
 " Cpplint config
@@ -232,5 +245,5 @@ let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vim': 'vim'}
 let g:vimwiki_list = [wiki]
 
 
-autocmd BufWritePost,FileWritePost *.wiki VimwikiAll2HTML
+autocmd BufWritePost,FileWritePost *.wiki silent VimwikiAll2HTML
 

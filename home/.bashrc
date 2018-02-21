@@ -139,21 +139,24 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-
+user_bashrc_file="${HOME}/.${USERNAME}_bashrc"
+if [ -f "${user_bashrc_file}" ]; then
+    source "${user_bashrc_file}"
+fi
 # I don't want everything on the internet
 if [ -f ~/.private_bashrc ]; then
     . ~/.private_bashrc
 fi
 
-export GOBY_HDF5_PLUGIN="/home/ams/src/ams-core/core/lib/libams_hdf5plugin.so"
-
-export PATH="/home/ams/src/fleet_vision/node_modules/.bin:/home/ams/src/ams-core/core/build/bin:$PATH"
-
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/arcgis/runtime_sdk/qt10.2.6/sdk/linux/x64/lib
-export LD_LIBRARY_PATH
 
 
+#[[ $TERM == *"rxvt"* ]] && wmctrl -r :ACTIVE: -b add,fullscreen
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
