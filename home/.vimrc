@@ -247,3 +247,4 @@ let g:vimwiki_list = [wiki]
 
 autocmd BufWritePost,FileWritePost *.wiki silent VimwikiAll2HTML
 
+autocmd FileType make setlocal noexpandtab
