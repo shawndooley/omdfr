@@ -205,8 +205,9 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 # finds out, if available)
 #bar {
 #output HDMI-0
-#        position bottom
-#        status_command i3blocks
+#mode hide
+        position top
+        status_command i3blocks
 #        tray_output DP2-1
 #}
 

@@ -125,7 +125,7 @@ shopt -s checkwinsize
 export EDITOR=/usr/bin/vim
 set -o vi
 
-export MAKEFLAGS="-j8"
+export MAKEFLAGS="-j4"
 
 
 

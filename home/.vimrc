@@ -248,3 +248,7 @@ let g:vimwiki_list = [wiki]
 autocmd BufWritePost,FileWritePost *.wiki silent VimwikiAll2HTML
 
 autocmd FileType make setlocal noexpandtab
+
+highlight YcmErrorSection term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
+highlight Spellbad term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
+
