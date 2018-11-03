@@ -5,6 +5,8 @@ case $- in
 esac
 
 
+set -o physical
+
 
 # PS1 Prompt
 ################################################################################
@@ -154,6 +156,10 @@ if [ -f ~/.private_bashrc ]; then
 fi
 
 
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+
+#GREP_OPTIONS=" --color=always"
 
 #[[ $TERM == *"rxvt"* ]] && wmctrl -r :ACTIVE: -b add,fullscreen
 
