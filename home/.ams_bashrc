@@ -9,3 +9,4 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/arcgis/runtime_sdk/qt10.2.6/sdk/linux/
 export AMS_BUILD_CENTRAL=1
 
 export BOOST_TEST_LOG_LEVEL=message
+export AMS_CUSTOM_DOXYGEN_OUT_DIR=/srv/qnap/AMS_SHARED/Software/Generated_Docs/doxygen

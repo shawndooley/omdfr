@@ -25,10 +25,13 @@ Plug 'Valloric/YouCompleteMe', {'do': './install.py --clang-completer'}
 Plug 'vim-scripts/a.vim'
 
 " Generate template code when opening new files based on their extension
-"Plug 'aperezdc/vim-template'
+" Plug 'shawndooley/vim-template'
+
+Plug 'AutonomousMarineSystems/vim-licenses'
 
 " Use cpp-lint inside vim
-"Plug 'funorpain/vim-cpplint'
+Plug 'shawndooley/vim-cpplint'
+
 
 " Mostly installed for Python lint
 Plug 'vim-syntastic/syntastic'
@@ -52,8 +55,6 @@ Plug 'chrisbra/csv.vim'
 "Allows me to switch between .cc and .h files with the 'A' command
 Plug 'vim-scripts/a.vim'
 
-" Templates
-"Plug 'LucHermitte/mu-template'
 
 
 " Highlights current word
@@ -73,12 +74,17 @@ Plug 'mustache/vim-mustache-handlebars'
 "Plug 'othree/yajs.vim', {'for':'javascript'}
 
 
+" Trying language servers?
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
+
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'vim-scripts/TaskList.vim'
 
-" Trying this.
-Plug 'kien/ctrlp.vim'
+" Trying this...I like it!
+Plug 'ctrlpvim/ctrlp.vim'
 
 
 Plug 'prabirshrestha/vim-lsp'
@@ -222,9 +228,11 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_pylint_exe = 'pylint'
+"let g:syntastic_python_pylint_exe = 'pylint'
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 " color_coded
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,7 +241,7 @@ let g:color_coded_filetypes = ['c', 'cpp', 'objc']
 
 
 " Cpplint config
-" let s:cpplint_cmd="cpplint"
+let s:cpplint_cmd="cpplint"
 
 set statusline+=%F
 
@@ -277,4 +285,22 @@ highlight WhiteSpaceBol ctermfg=white
 highlight WhiteSpaceMol ctermfg=black
 match WhiteSpaceMol / /
 2match WhiteSpaceBol /^ \+/
+
+"if executable('pyls')
+    "" pip install python-language-server
+    "au User lsp_setup call lsp#register_server({
+        "\ 'name': 'pyls',
+        "\ 'cmd': {server_info->['pyls']},
+        "\ 'whitelist': ['python'],
+        "\ })
+"endif
+
+let g:licenses_copyright_holders_name = 'Autonomous Marine Systems Inc.'
+
+let g:licenses_authors_name = 'Dooley, Shawn <sdooley@automarinesys.com>'
+
+command! License call InsertLicense('ams.txt')
+let g:licenses_default_commands = ['ams']
+
+
 
