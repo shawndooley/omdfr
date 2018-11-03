@@ -1,7 +1,5 @@
-export PATH=$PATH:/home/shawn/src/moos-ivp/bin:/home/shawn/mit/2680/src/moos-ivp-extend/bin
+export PATH=$PATH:/home/shawn/src/proto-gre/build/bin
 
-alias asdf='cd ~/src/moos-ivp/ivp/missions'
-alias qwer='cd ~/mit/2680/labs/missions'
+alias asdf='cd ~/src/proto-gres/src'
 
-export MOOSIVP_SOURCE_TREE_BASE=/home/shawn/src/moos-ivp
 

@@ -153,6 +153,23 @@ bindsym $mod+KP_8 workspace 8
 bindsym $mod+KP_9 workspace 9
 bindsym $mod+KP_0 workspace 10
 
+
+# Same as above but for the numberpad
+# switch to workspace
+bindsym $mod+87 workspace 1
+bindsym $mod+88 workspace 2
+bindsym $mod+89 workspace 3
+bindsym $mod+90 workspace 4
+bindsym $mod+91 workspace 5
+bindsym $mod+92 workspace 6
+bindsym $mod+93 workspace 7
+bindsym $mod+94 workspace 8
+bindsym $mod+95 workspace 9
+bindsym $mod+96 workspace 10
+
+
+
+
 # move focused container to workspace
 bindsym $mod+Shift+KP_1 move container to workspace 1
 bindsym $mod+Shift+KP_2 move container to workspace 2
@@ -225,7 +242,7 @@ exec ~/bin/fuck_capslock
 
 # timed screen lock
 # exec xautolock -time 5 -locker ~/bin/fuzz.sh
-#exec xautolock -time 3 -locker gnome-screensaver-command --lock
+exec xautolock -time 3 -locker "gnome-screensaver-command --lock"
 
 
 # These didn't work. I should look further into that when I get time. 

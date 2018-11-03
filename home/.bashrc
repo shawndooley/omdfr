@@ -72,7 +72,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 
-LS_COLORS='di=01;34:fi=0:ln=33:pi=5:so=5:bd=5:cd=5:or=37:mi=0:ex=91:*.rpm=90:*.deb=92:*.run=1;92:*.png=34:*.jpg=94:*.JPG=94:*.JPEG=94:*.xcf=34:*.tiff=1;34:*.TIFF=1;34:*.gif=1;94:*.aux=90:*.bib=34:*.log=1;90:*.pdf=1;93:*.tex=33:*.zip=31:*.tar.gz=91:*.tar.bz2=91:*.exe=1;94;100:*.doc=1;94;100:*.xlsx=1;94;100:*.xls=1;94;100:*.pptx=1;94;100:*.nb=31:*.math=91:*.m=31:*.py=93:*.sh=92:*.rb=95:*.pl=1;94:*.c=31:*.h=91:*.cc=93:*.cpp=93:*.md=1;33:*README=1;33:*LICENSE=33:*.txt=93:*.ipynb=1;33:*.mp3=31:*.mp4=91:*.mov=1;91:*.html=95:*.js=35:*.css=1;95:*rc=32:*config=1;32:*makefile=1;91'
+LS_COLORS='di=01;34:fi=0:ln=33:pi=5:so=5:bd=5:cd=5:or=37:mi=0:ex=91:*.rpm=90:*.deb=92:*.run=1;92:*.png=34:*.jpg=94:*.JPG=94:*.JPEG=94:*.xcf=34:*.tiff=1;34:*.TIFF=1;34:*.gif=1;94:*.aux=90:*.bib=34:*.log=1;90:*.pdf=1;93:*.tex=33:*.zip=31:*.tar.gz=91:*.tar.bz2=91:*.exe=1;94;100:*.doc=1;94;100:*.xlsx=1;94;100:*.xls=1;94;100:*.pptx=1;94;100:*.nb=31:*.math=91:*.m=31:*.py=93:*.sh=92:*.rb=95:*.pl=1;94:*.c=31:*.h=91:*.cc=93:*.cpp=93:*.md=1;33:*README=1;33:*LICENSE=33:*.txt=93:*.ipynb=1;33:*.mp3=31:*.mp4=91:*.mov=1;91:*.html=95:*.js=35:*.css=1;95:*rc=32:*config=1;32:*makefile=1;91:*proto=0;32:*MakeLists.txt=1;31'
 
 
 #History
@@ -134,6 +134,7 @@ export MAKEFLAGS="-j4"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lg='ls --group-directories-first'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -160,3 +161,9 @@ fi
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#fuck_capslock
+
+
+export EMAIL=shawn@shawndooley.net
+export DEBSIGN_KEYID=6773C61EB3AA699FECEC0F8AEC498AB93A9E27A4
+
