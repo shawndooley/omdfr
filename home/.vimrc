@@ -30,7 +30,6 @@ Plug 'AutonomousMarineSystems/vim-licenses'
 " Use cpp-lint inside vim
 Plug 'shawndooley/vim-cpplint'
 
-
 " Mostly installed for Python lint
 Plug 'vim-syntastic/syntastic'
 
@@ -180,6 +179,8 @@ set textwidth=80
 set cindent
 set cinoptions=h1,l1,g1,t0,i4,+4,(0,w1,W4
 set cino=N-s
+" # these seem to be the
+set cinoptions+=g1,h1
 
 filetype on
 filetype plugin on
