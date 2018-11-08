@@ -10,6 +10,8 @@ endif
 "Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged') 
+
+
 " Can I just do this :?
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
@@ -82,6 +84,10 @@ Plug 'vim-scripts/TaskList.vim'
 
 " Trying this...I like it!
 Plug 'ctrlpvim/ctrlp.vim'
+
+
+Plug 'prabirshrestha/vim-lsp'
+'
 
 call plug#end() 
 
@@ -263,6 +269,24 @@ highlight Spellbad term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
 
 
 
+if executable('cquery')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'cquery',
+      \ 'cmd': {server_info->['cquery']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': { 'cacheDirectory': '/tmp/cquery/cache' },
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+ endif
+
+
+set listchars=space:·,tab:▸\ ,eol:¬
+" set list
+highlight WhiteSpaceBol ctermfg=white
+highlight WhiteSpaceMol ctermfg=black
+match WhiteSpaceMol / /
+2match WhiteSpaceBol /^ \+/
+
 "if executable('pyls')
     "" pip install python-language-server
     "au User lsp_setup call lsp#register_server({
@@ -281,4 +305,3 @@ let g:licenses_default_commands = ['ams']
 
 
 
-autocmd BufNewFile *.cpp,*.h :Ams
