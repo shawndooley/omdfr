@@ -21,9 +21,12 @@ exec --no-startup-id dbus-send \
 
 
 
-#exec ~/.screenlayout/desk.sh
+exec ~/.screenlayout/megaman.sh
 
 set $mod Mod4
+
+set $terminal konsole  --hide-tabbar --hide-menubar
+set $terminal i3-sensible-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -45,16 +48,18 @@ font pango:Liberation Sans Mono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+
+
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+KP_Enter exec i3-sensible-terminal
+bindsym $mod+Return exec $terminal
+bindsym $mod+KP_Enter exec $terminal
 bindsym $mod+m move workspace to output right
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Disable border on new windows
-new_window 1pixel
+#new_window 1pixel
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -182,6 +187,33 @@ bindsym $mod+Shift+KP_8 move container to workspace 8
 bindsym $mod+Shift+KP_9 move container to workspace 9
 bindsym $mod+Shift+KP_0 move container to workspace 10
 
+
+
+
+# Switch with numpad
+    bindsym $mod+Mod2+KP_1 workspace 1
+    bindsym $mod+Mod2+KP_2 workspace 2
+    bindsym $mod+Mod2+KP_3 workspace 3
+    bindsym $mod+Mod2+KP_4 workspace 4
+    bindsym $mod+Mod2+KP_5 workspace 5
+    bindsym $mod+Mod2+KP_6 workspace 6
+    bindsym $mod+Mod2+KP_7 workspace 7
+    bindsym $mod+Mod2+KP_8 workspace 8
+    bindsym $mod+Mod2+KP_9 workspace 9
+    bindsym $mod+Mod2+KP_0 workspace 10
+
+# move with numpad
+bindsym $mod+Mod2+Shift+KP_End move container to workspace 1
+bindsym $mod+Mod2+Shift+KP_Down move container to workspace 2
+bindsym $mod+Mod2+Shift+KP_Next move container to workspace 3
+bindsym $mod+Mod2+Shift+KP_Left move container to workspace 4
+bindsym $mod+Mod2+Shift+KP_Begin move container to workspace 5
+bindsym $mod+Mod2+Shift+KP_Right move container to workspace 6
+bindsym $mod+Mod2+Shift+KP_Home move container to workspace 7
+bindsym $mod+Mod2+Shift+KP_Up move container to workspace 8
+bindsym $mod+Mod2+Shift+KP_Prior move container to workspace 9
+bindsym $mod+Mod2+Shift+KP_Insert move container to workspace 10
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -231,10 +263,12 @@ bar {
 # Startup applications
 #exec gnome-sound-applet
 exec ~/bin/fuck_capslock
-#exec feh --bg-center ~/Pictures/Firefox_wallpaper.png
+#exec feh --bg-center Ocean
 
-#exec pasystray
-#exec nm-applet
+exec pasystray
+exec nm-applet
+exec alarm-clock-applet
+
 #exec blueman-applet
 # exec dropbox start
 
@@ -252,4 +286,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Screenlock
 bindsym Control+Mod1+L exec gnome-screensaver-command --lock
+
+
+
+
 
