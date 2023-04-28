@@ -245,6 +245,7 @@ let g:color_coded_filetypes = ['c', 'cpp', 'objc']
 let s:cpplint_cmd="cpplint"
 
 set statusline+=%F
+autocmd FileType text,markdown setlocal spell
 
 
 " Set default directory for wiki
@@ -298,7 +299,7 @@ match WhiteSpaceMol / /
 
 let g:licenses_copyright_holders_name = 'Autonomous Marine Systems Inc.'
 
-let g:licenses_authors_name = 'Dooley, Shawn <sdooley@automarinesys.com>'
+let g:licenses_authors_name = 'Dooley, Shawn <shawn@shawndooley.net>'
 
 command! License call InsertLicense('ams.txt')
 let g:licenses_default_commands = ['ams']

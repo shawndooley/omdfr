@@ -5,6 +5,8 @@ case $- in
 esac
 
 
+export PATH=$PATH:$HOME/bin
+
 set -o physical
 
 
@@ -157,8 +159,6 @@ if [ -f ~/.private_bashrc ]; then
 fi
 
 
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
 
 #GREP_OPTIONS=" --color=always"
 
@@ -172,4 +172,8 @@ export CXX=/usr/bin/clang++
 
 export EMAIL=shawn@shawndooley.net
 export DEBSIGN_KEYID=6773C61EB3AA699FECEC0F8AEC498AB93A9E27A4
+
+
+
+source /opt/ros/humble/local_setup.bash
 

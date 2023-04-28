@@ -60,7 +60,7 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=Free:
+label=Disk:
 #instance=/mnt/data
 interval=30
 
@@ -69,34 +69,17 @@ interval=30
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-instance=enp0s31f6
+label=WiFi: 
+instance=wlp0s20f3
 color=#00FF00
 interval=10
 separator=true
 
 
 [iface]
-instance=tun0
+label=VPN:
+instance=wg0
 color=#00FF00
-interval=10
-separator=true
-
-
-[iface]
-instance=tun1
-color=#00FF00
-interval=10
-separator=true
-
-[iface]
-label=Wifi:
-instance=wlp4s0
-color=#00FF00
-interval=10
-separator=false
-
-[wifi]
-instance=wlp4s0
 interval=10
 separator=true
 
@@ -119,11 +102,6 @@ separator=true
 [battery]
 label=Bat 1
 instance=0
-interval=30
-
-[battery]
-label=Bat 2
-instance=1
 interval=30
 
 # Date Time
@@ -152,9 +130,9 @@ interval=1
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[temperature]
-#label=TEMP
-#interval=10
+[temperature]
+label=TEMP
+interval=10
 
 # Key indicators
 #

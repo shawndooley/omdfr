@@ -26,7 +26,7 @@ exec ~/.screenlayout/megaman.sh
 set $mod Mod4
 
 set $terminal konsole  --hide-tabbar --hide-menubar
-set $terminal i3-sensible-terminal
+set $terminal gnome-terminal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -59,7 +59,7 @@ bindsym $mod+m move workspace to output right
 bindsym $mod+Shift+q kill
 
 # Disable border on new windows
-#new_window 1pixel
+new_window 1pixel
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -248,7 +248,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -262,7 +262,9 @@ bar {
 
 # Startup applications
 #exec gnome-sound-applet
-exec ~/bin/fuck_capslock
+exec  sleep 3 && ~/bin/fuck_capslock
+exec ~/bin/network_display.sh
+exec sleep 3 && numlockx on
 #exec feh --bg-center Ocean
 
 exec pasystray
@@ -276,16 +278,16 @@ exec alarm-clock-applet
 
 # timed screen lock
 # exec xautolock -time 5 -locker ~/bin/fuzz.sh
-exec xautolock -time 3 -locker "gnome-screensaver-command --lock"
+exec xautolock -time 3 -locker "i3lock -c 000000"
 
 
 # These didn't work. I should look further into that when I get time. 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec brightnessctl +10
+bindsym XF86MonBrightnessDown exec brightnessctl 100
 
 
 # Screenlock
-bindsym Control+Mod1+L exec gnome-screensaver-command --lock
+bindsym Control+Mod1+L exec i3lock -c 000000
 
 
 
