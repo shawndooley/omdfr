@@ -154,6 +154,19 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     event = "InsertEnter",
   },
+
+  {
+    'nvim-telescope/telescope.nvim', 
+    tag = 'v0.2.0',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'BurntSushi/ripgrep'
+    },
+  },
+  {'ishan9299/nvim-solarized-lua'},  -- Solarized theme for Neovim
+
+
+
 })
 
 -- === LSP + Completion configuration ===
@@ -283,6 +296,9 @@ cmp.setup({
   },
   mapping = cmp.mapping.preset.insert({
     ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    ["<Tab>"] = cmp.mapping.confirm({select = true,}),
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
@@ -291,3 +307,32 @@ cmp.setup({
     { name = "path" },
   }),
 })
+
+-- Set the colorscheme to Solarized
+vim.cmd('colorscheme solarized')
+
+vim.g.mapleader = ' '  -- Set leader key to space
+
+local telescope = require('telescope')
+
+telescope.setup {
+  defaults = {
+    vimgrep_arguments = {
+      'rg', '--hidden', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
+    },		
+  }
+}
+
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Telescope find files' })
+
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+
+
+
